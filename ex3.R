@@ -1,0 +1,8 @@
+lvl <- c(8, 10, 10, 1, 10, 10, 8, 12, 1, 12)
+print(paste("Sum:", sum(lvl), sep = " "))
+print(paste("Average:", mean(lvl), sep = " "))
+print(paste("Median:", median(lvl), sep = " "))
+len <- length(lvl)
+print(paste("Length of Vector:", len, sep = " "))
+print(paste("Standard Deviation:", sd(lvl), sep = " "))
+print(paste("Standard Deviation(rounded):", round(sd(lvl)), sep = " "))

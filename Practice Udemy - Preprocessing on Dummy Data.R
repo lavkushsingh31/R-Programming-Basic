@@ -4,6 +4,9 @@
 #
 ###################################################################
 
+library('caTools')
+
+
 # getting the working directory
 getwd()
 
@@ -41,3 +44,21 @@ print(data)
 
 # Splitting the dataset into training and test set
 
+set.seed(123)
+split <- sample.split(data$Purchased, SplitRatio = 0.8 )  # here SplitRatio is for training set
+print(split)  # TRUE -> Training set, FALSE -> Test Set
+
+training_set <- subset(data, split == TRUE) 
+test_set <- subset(data, split == FALSE)
+
+print(training_set)
+print(test_set)
+
+
+# Feature Scaling
+
+training_set[,2:3] <- scale(training_set[,2:3])
+test_set[,2:3] <- scale(test_set[,2:3])
+
+print(training_set)
+print(test_set)

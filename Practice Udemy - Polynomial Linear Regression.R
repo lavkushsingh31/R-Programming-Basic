@@ -56,8 +56,28 @@ geom_line(aes(x = data$Level, y = predict(linear_regressor, newdata = data)),
 ggplot() +
   geom_point(aes(x = data$Level, y= data$Salary),
              color = 'red') +
-  geom_line(aes(x = data$Level, y = predict(polynomial_regressor, newdata = data)),
+  geom_line(aes(x = data$Level, y = predict(polynomial_regressor, data)),
             color = 'blue') +
   ggtitle('Actual Salary vs Falsely Claimed Salary (Polynomial Linear Regression)') +
   xlab('Position (Levels)') +
   ylab('Salary')
+
+
+# Making Predictions - Linear Regression
+
+prediction = predict(linear_regressor, data.frame(Level = 6.5))
+prediction
+
+# Making Predictions - Polynomial Regression
+
+user_input = 6.5
+
+user_input <- data.frame(Level = user_input, 
+                         Level2 = user_input**2,
+                         Level3 = user_input**3)
+user_input
+
+prediction_polynomial = predict(linear_regressor, user_input)
+prediction_polynomial
+
+

@@ -83,3 +83,6 @@ summary(regressor)
 regressor <- lm(formula = "Profit  ~  R.D.Spend + Marketing.Spend", 
                 data = data)
 summary(regressor)
+
+
+

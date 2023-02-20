@@ -48,6 +48,6 @@ ggplot() +
              color = 'red') +
   geom_line(aes(x = data$Level, y = predict(svm_regressor, data)),
             color = 'blue') +
-  ggtitle('Actual Salary vs Falsely Claimed Salary (Linear Regression)') +
+  ggtitle('Actual Salary vs Falsely Claimed Salary (Support Vector Regression)') +
   xlab('Position (Levels)') +
   ylab('Salary')
